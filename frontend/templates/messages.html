@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens - StudyAI</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/messages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>StudyAI</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/" class="nav-link">Início</a>
+                    <a href="#" class="nav-link">Perguntas</a>
+                    <a href="messages.html" class="nav-link active">Mensagens</a>
+                    <a href="achievements.html" class="nav-link">Conquistas</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn">Entrar</button>
+                    <button class="btn btn-primary" id="registerBtn">Cadastrar</button>
+                </div>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="dropdown">
+                        <a href="profile.html" class="dropdown-item">Meu Perfil</a>
+                        <a href="#" class="dropdown-item">Minhas Perguntas</a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="messages-layout">
+                <!-- Sidebar with conversations -->
+                <div class="conversations-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Conversas</h2>
+                        <button class="btn btn-primary btn-sm" id="newConversationBtn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="search-conversations">
+                        <input type="text" placeholder="Buscar conversas..." id="searchConversations">
+                    </div>
+                    
+                    <div class="conversations-list" id="conversationsList">
+                        <!-- Conversations will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Chat area -->
+                <div class="chat-area">
+                    <div class="chat-header" id="chatHeader">
+                        <div class="chat-info">
+                            <div class="chat-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="chat-details">
+                                <h3>StudyAI Assistant</h3>
+                                <span class="status online">Online</span>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="welcome-message">
+                            <div class="ai-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <h3>Bem-vindo ao StudyAI!</h3>
+                                <p>Olá! Sou seu assistente de estudos com inteligência artificial. Posso ajudá-lo com:</p>
+                                <ul>
+                                    <li>Explicações de conceitos acadêmicos</li>
+                                    <li>Resolução de exercícios</li>
+                                    <li>Dicas de estudo</li>
+                                    <li>Esclarecimento de dúvidas</li>
+                                </ul>
+                                <p>Como posso ajudá-lo hoje?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <div class="chat-input-container">
+                            <input type="text" placeholder="Digite sua mensagem..." id="messageInput">
+                            <button class="btn btn-primary" id="sendMessageBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="input-actions">
+                            <button class="action-btn" title="Anexar arquivo">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="action-btn" title="Emoji">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                            <button class="action-btn" title="Gravação de voz">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- New Conversation Modal -->
+    <div class="modal" id="newConversationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nova Conversa</h3>
+                <button class="close-btn" data-modal="newConversationModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="conversation-form" id="conversationForm">
+                <div class="form-group">
+                    <label for="conversationType">Tipo de Conversa</label>
+                    <select id="conversationType" required>
+                        <option value="">Selecione o tipo</option>
+                        <option value="ai">Conversa com IA</option>
+                        <option value="study-group">Grupo de Estudos</option>
+                        <option value="tutor">Tutor Particular</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="conversationSubject">Matéria</label>
+                    <select id="conversationSubject" required>
+                        <option value="">Selecione a matéria</option>
+                        <option value="math">Matemática</option>
+                        <option value="science">Ciências</option>
+                        <option value="history">História</option>
+                        <option value="language">Português</option>
+                        <option value="other">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="conversationTopic">Tópico Inicial</label>
+                    <input type="text" id="conversationTopic" placeholder="Ex: Equações do segundo grau" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" data-modal="newConversationModal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Iniciar Conversa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/messages.js"></script>
+</body>
+</html>

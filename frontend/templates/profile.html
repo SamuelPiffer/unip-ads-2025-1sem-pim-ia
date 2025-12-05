@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - StudyAI</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>StudyAI</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/" class="nav-link">Início</a>
+                    <a href="/#questions" class="nav-link">Perguntas</a>
+                    <a href="messages.html" class="nav-link">Mensagens</a>
+                    <a href="achievements.html" class="nav-link">Conquistas</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn">Entrar</button>
+                    <button class="btn btn-primary" id="registerBtn">Cadastrar</button>
+                </div>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="dropdown">
+                        <a href="profile.html" class="dropdown-item">Meu Perfil</a>
+                        <a href="#" class="dropdown-item">Minhas Perguntas</a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="profile-layout">
+                <!-- Profile Sidebar -->
+                <div class="profile-sidebar">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                            <button class="avatar-edit-btn">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <h2 class="profile-name" id="profileName">Usuário</h2>
+                        <p class="profile-email" id="profileEmail">usuario@email.com</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Perguntas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">42</span>
+                                <span class="stat-label">Respostas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">128</span>
+                                <span class="stat-label">Pontos</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-menu">
+                        <a href="#" class="menu-item active" data-section="overview">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Visão Geral</span>
+                        </a>
+                        <a href="#" class="menu-item" data-section="questions">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Minhas Perguntas</span>
+                        </a>
+                        <a href="#" class="menu-item" data-section="answers">
+                            <i class="fas fa-comment"></i>
+                            <span>Minhas Respostas</span>
+                        </a>
+                        <a href="#" class="menu-item" data-section="achievements">
+                            <i class="fas fa-trophy"></i>
+                            <span>Conquistas</span>
+                        </a>
+                        <a href="#" class="menu-item" data-section="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Configurações</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Content -->
+                <div class="profile-content">
+                    <!-- Overview Section -->
+                    <div class="content-section active" id="overview">
+                        <div class="section-header">
+                            <h2>Visão Geral</h2>
+                            <p>Acompanhe seu progresso nos estudos</p>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-question-circle"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>15</h3>
+                                    <p>Perguntas Feitas</p>
+                                    <span class="stat-change positive">+3 esta semana</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>42</h3>
+                                    <p>Respostas da IA</p>
+                                    <span class="stat-change positive">+8 esta semana</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>24h</h3>
+                                    <p>Tempo de Estudo</p>
+                                    <span class="stat-change positive">+4h esta semana</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>128</h3>
+                                    <p>Pontos Totais</p>
+                                    <span class="stat-change positive">+15 esta semana</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recent-activity">
+                            <h3>Atividade Recente</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-question-circle"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Pergunta feita:</strong> Como resolver equações do segundo grau?</p>
+                                        <span class="activity-time">2 horas atrás</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Resposta da IA recebida</strong> sobre mitose e meiose</p>
+                                        <span class="activity-time">1 dia atrás</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p><strong>Conquista desbloqueada:</strong> Primeira Pergunta</p>
+                                        <span class="activity-time">3 dias atrás</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Questions Section -->
+                    <div class="content-section" id="questions">
+                        <div class="section-header">
+                            <h2>Minhas Perguntas</h2>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Nova Pergunta
+                            </button>
+                        </div>
+                        
+                        <div class="questions-list">
+                            <!-- Questions will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Achievements Section -->
+                    <div class="content-section" id="achievements">
+                        <div class="section-header">
+                            <h2>Conquistas</h2>
+                            <p>Seus marcos de aprendizado</p>
+                        </div>
+                        
+                        <div class="achievements-grid">
+                            <div class="achievement-card earned">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-question-circle"></i>
+                                </div>
+                                <h3>Primeira Pergunta</h3>
+                                <p>Fez sua primeira pergunta na plataforma</p>
+                                <span class="achievement-date">Conquistado em 15/01/2024</span>
+                            </div>
+                            
+                            <div class="achievement-card earned">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3>Amigo da IA</h3>
+                                <p>Recebeu 10 respostas da inteligência artificial</p>
+                                <span class="achievement-date">Conquistado em 16/01/2024</span>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <h3>Sequência de Estudos</h3>
+                                <p>Estude por 7 dias consecutivos</p>
+                                <span class="achievement-progress">Progresso: 3/7 dias</span>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3>Especialista</h3>
+                                <p>Faça 50 perguntas em uma matéria</p>
+                                <span class="achievement-progress">Progresso: 15/50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Section -->
+                    <div class="content-section" id="settings">
+                        <div class="section-header">
+                            <h2>Configurações</h2>
+                            <p>Personalize sua experiência</p>
+                        </div>
+                        
+                        <div class="settings-form">
+                            <div class="settings-group">
+                                <h3>Informações Pessoais</h3>
+                                <div class="form-group">
+                                    <label for="settingsName">Nome</label>
+                                    <input type="text" id="settingsName" placeholder="Seu nome">
+                                </div>
+                                <div class="form-group">
+                                    <label for="settingsEmail">Email</label>
+                                    <input type="email" id="settingsEmail" placeholder="seu@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="settingsBio">Biografia</label>
+                                    <textarea id="settingsBio" placeholder="Conte um pouco sobre você..."></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="settings-group">
+                                <h3>Preferências de Estudo</h3>
+                                <div class="form-group">
+                                    <label for="favoriteSubjects">Matérias Favoritas</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" value="math">
+                                            <span>Matemática</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" value="science">
+                                            <span>Ciências</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" value="history">
+                                            <span>História</span>
+                                        </label>
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" value="language">
+                                            <span>Português</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="settings-group">
+                                <h3>Notificações</h3>
+                                <div class="toggle-group">
+                                    <div class="toggle-item">
+                                        <span>Notificações por email</span>
+                                        <label class="toggle">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Lembretes de estudo</span>
+                                        <label class="toggle">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Novas respostas da IA</span>
+                                        <label class="toggle">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button class="btn btn-outline">Cancelar</button>
+                                <button class="btn btn-primary">Salvar Alterações</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

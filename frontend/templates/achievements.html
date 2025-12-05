@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conquistas - StudyAI</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/achievements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>StudyAI</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/" class="nav-link">Início</a>
+                    <a href="/#questions" class="nav-link">Perguntas</a>
+                    <a href="messages.html" class="nav-link">Mensagens</a>
+                    <a href="achievements.html" class="nav-link active">Conquistas</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn">Entrar</button>
+                    <button class="btn btn-primary" id="registerBtn">Cadastrar</button>
+                </div>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                        <span class="user-name" id="userName"></span>
+                    </div>
+                    <div class="dropdown">
+                        <a href="profile.html" class="dropdown-item">Meu Perfil</a>
+                        <a href="#" class="dropdown-item" id="myQuestionsBtn">Minhas Perguntas</a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Achievements Header -->
+            <div class="achievements-header">
+                <div class="header-content">
+                    <h1>Suas Conquistas</h1>
+                    <p>Acompanhe seu progresso e desbloqueie novas conquistas estudando</p>
+                </div>
+                <div class="level-info">
+                    <div class="level-badge">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="xp-info">
+
+                        <div class="xp-bar">
+                            <div class="xp-progress" style="width: 81.7%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>23</h3>
+                        <p>Conquistas Desbloqueadas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>15</h3>
+                        <p>Dias de Sequência</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>127</h3>
+                        <p>Perguntas Respondidas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Pessoas Ajudadas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Categories -->
+            <div class="achievement-nav">
+                <div class="nav-tabs">
+_______________________________________________________________________________________________________________________________________________________________
+
+                </div>
+
+            </div>
+            <!-- Achievements Grid -->
+            <div class="achievements-grid">
+                <!-- Study Achievements -->
+                <div class="achievement-card unlocked" data-category="study">
+                    <div class="achievement-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Primeiro Passo</h3>
+                        <p>Faça sua primeira pergunta</p>
+                        <div class="achievement-progress">
+                            <span>Concluído</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+50 XP</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card unlocked" data-category="study">
+                    <div class="achievement-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Estudante Dedicado</h3>
+                        <p>Estude por 7 dias consecutivos</p>
+                        <div class="achievement-progress">
+                            <span>Concluído</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+200 XP</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card unlocked" data-category="study">
+                    <div class="achievement-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Mestre da Matemática</h3>
+                        <p>Responda 50 perguntas de matemática</p>
+                        <div class="achievement-progress">
+                            <span>Concluído</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+300 XP</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card locked" data-category="study">
+                    <div class="achievement-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Físico Experiente</h3>
+                        <p>Responda 100 perguntas de física</p>
+                        <div class="achievement-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 67%"></div>
+                            </div>
+                            <span>67/100</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+500 XP</span>
+                    </div>
+                </div>
+
+                <!-- Social Achievements -->
+                <div class="achievement-card unlocked" data-category="social">
+                    <div class="achievement-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Primeira Curtida</h3>
+                        <p>Receba sua primeira curtida</p>
+                        <div class="achievement-progress">
+                            <span>Concluído</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+25 XP</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card unlocked" data-category="social">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Colaborador</h3>
+                        <p>Ajude 5 pessoas com suas respostas</p>
+                        <div class="achievement-progress">
+                            <span>Concluído</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+150 XP</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card locked" data-category="social">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Mentor</h3>
+                        <p>Ajude 25 pessoas com suas respostas</p>
+                        <div class="achievement-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 32%"></div>
+                            </div>
+                            <span>8/25</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+400 XP</span>
+                    </div>
+                </div>
+
+                <!-- Special Achievements -->
+                <div class="achievement-card unlocked special" data-category="special">
+                    <div class="achievement-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Membro Fundador</h3>
+                        <p>Um dos primeiros 100 usuários</p>
+                        <div class="achievement-progress">
+                            <span>Conquista Especial</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+1000 XP</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card unlocked special" data-category="special">
+                    <div class="achievement-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Em Chamas</h3>
+                        <p>Mantenha uma sequência de 30 dias</p>
+                        <div class="achievement-progress">
+                            <span>Conquista Rara</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+750 XP</span>
+                    </div>
+                </div>
+
+                <!-- Progress Achievements -->
+                <div class="achievement-card unlocked" data-category="progress">
+                    <div class="achievement-icon">
+                        <i class="fas fa-level-up-alt"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Jornada</h3>
+                        <p>Complete uma série de desafios</p>
+                        <div class="achievement-progress">
+                            <span>Concluído</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+300 XP</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card locked" data-category="progress">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Campeão</h3>
+                        <p>Inicie a primeira sessão</p>
+                        <div class="achievement-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 48%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+1000 XP</span>
+                    </div>
+                </div>
+
+                <div class="achievement-card locked" data-category="study">
+                    <div class="achievement-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Gênio da IA</h3>
+                        <p>Use a IA para responder 200 perguntas</p>
+                        <div class="achievement-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 63.5%"></div>
+                            </div>
+                            <span>127/200</span>
+                        </div>
+                    </div>
+                    <div class="achievement-reward">
+                        <span>+600 XP</span>
+                    </div>
+                </div>
+
+    <!-- Achievement Unlock Modal -->
+    <div class="modal" id="achievementModal">
+        <div class="modal-content achievement-unlock">
+            <div class="unlock-animation">
+                <div class="unlock-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="unlock-particles"></div>
+            </div>
+            <div class="unlock-info">
+                <h2>Conquista Desbloqueada!</h2>
+                <h3 id="unlockTitle">Nome da Conquista</h3>
+                <p id="unlockDescription">Descrição da conquista</p>
+                <div class="unlock-reward">
+                    <span id="unlockXP">+100 XP</span>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="closeUnlockModal">Continuar</button>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/achievements.js"></script>
+</body>
+</html>

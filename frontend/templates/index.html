@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyAI - Plataforma de Estudos com IA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>StudyAI</span>
+                </div>
+                <div class="nav-links">
+                    <a href="/" class="nav-link active">Início</a>
+                    <a href="#" class="nav-link" id="questionsLink">Perguntas</a>
+                    <a href="/messages" class="nav-link">Mensagens</a>
+                    <a href="/achievements" class="nav-link">Conquistas</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn">Entrar</button>
+                    <button class="btn btn-primary" id="registerBtn">Cadastrar</button>
+                </div>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                        <span class="user-name" id="userName"></span>
+                    </div>
+                    <div class="dropdown">
+                        <a href="/profile" class="dropdown-item">Meu Perfil</a>
+                        <a href="#" class="dropdown-item" id="myQuestionsBtn">Minhas Perguntas</a>
+                        <a href="/achievements" class="dropdown-item">Conquistas</a>
+                        <a href="/settings" class="dropdown-item">Configurações</a>
+                        <a href="#" class="dropdown-item" id="logoutBtn">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Aprenda com a ajuda da <span class="highlight">Inteligência Artificial</span></h1>
+                    <p>Faça perguntas, obtenha respostas instantâneas da IA e conecte-se com uma comunidade de estudantes.</p>
+                    <div class="search-box">
+                        <input type="text" placeholder="Faça sua pergunta aqui..." id="questionInput">
+                        <button class="btn btn-primary" id="askBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questions Feed -->
+        <section class="questions-feed">
+            <div class="container">
+                <div class="feed-header">
+                    <h2>Perguntas Recentes</h2>
+                    <div class="search-filters-container">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="Buscar perguntas...">
+                            <button class="clear-search" id="clearSearch" style="display: none;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="feed-filters">
+                            <button class="filter-btn active" data-filter="all">Todas</button>
+                            <button class="filter-btn" data-filter="Matemática">Matemática</button>
+                            <button class="filter-btn" data-filter="Ciências">Ciências</button>
+                            <button class="filter-btn" data-filter="História">História</button>
+                            <button class="filter-btn" data-filter="Física">Física</button>
+                            <button class="filter-btn" data-filter="Química">Química</button>
+                        </div>
+                        <div class="sort-options">
+                            <select id="sortSelect">
+                                <option value="recent">Mais Recentes</option>
+                                <option value="popular">Mais Populares</option>
+                                <option value="unanswered">Sem Resposta</option>
+                                <option value="answered">Com Resposta</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions-list" id="questionsList">
+                    <!-- Questions will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Entrar</h3>
+                <button class="close-btn" data-modal="loginModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Senha</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Entrar</button>
+            </form>
+            <p class="auth-switch">Não tem conta? <a href="#" id="switchToRegister">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cadastrar</h3>
+                <button class="close-btn" data-modal="registerModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="auth-form" id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Nome</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Senha</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Cadastrar</button>
+            </form>
+            <p class="auth-switch">Já tem conta? <a href="#" id="switchToLogin">Entre aqui</a></p>
+        </div>
+    </div>
+
+    <!-- Question Modal -->
+    <div class="modal" id="questionModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Nova Pergunta</h3>
+                <button class="close-btn" data-modal="questionModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="question-form" id="questionForm">
+                <div class="form-group">
+                    <label for="questionTitle">Título da Pergunta</label>
+                    <input type="text" id="questionTitle" placeholder="Resuma sua pergunta em uma frase" required>
+                </div>
+                <div class="form-group">
+                    <label for="questionContent">Descrição Detalhada</label>
+                    <textarea id="questionContent" placeholder="Descreva sua pergunta com mais detalhes..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="questionCategory">Categoria</label>
+                    <select id="questionCategory" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Matemática">Matemática</option>
+                        <option value="Ciências">Ciências</option>
+                        <option value="História">História</option>
+                        <option value="Português">Português</option>
+                        <option value="Física">Física</option>
+                        <option value="Química">Química</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" data-modal="questionModal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Publicar Pergunta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
